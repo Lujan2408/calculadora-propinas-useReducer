@@ -43,8 +43,11 @@ export const orderReducer = (
     
     if(action.type === 'remove-item') {
         
+        const order = state.order.filter(item => item.id !== action.payload.id)
+        
         return {
-            ...state
+            ...state,
+            order
         }
     }
     
